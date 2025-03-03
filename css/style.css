@@ -12,7 +12,7 @@ body {
 h1 {
     width: 260px;
     font-size: 36px;
-    line-height: 36px;
+    line-height: 40px;
     border-left: 2px solid #cccccc;
 }
 .site-header p {
@@ -20,7 +20,7 @@ h1 {
 }
 
 h2 {
-    padding-bottom: 12px;
+    padding: 12px;
     border-bottom: 2px solid #cccccc;
 }
 span {
@@ -96,33 +96,36 @@ span {
     border-radius: 30%;
 }
 
-.tradition-list {
+.influence-list {
     padding: 0;
     list-style: none;
 }
 
-.tradition-item {
+.influence-item {
     margin-bottom: 15px;
     padding-left: 20px;
     border-left: 10px solid #ffa4c0;
     color: #000000;
 }
 
-.standard {
-    border-color: #ff92b3;
+.standart {
+    border-color: #72d3ef;
     color: rgb(0, 0, 0);
 }
-.par {
-    border-color: #ff80a6;
-    color: rgb(0, 0, 0);
-}
+
 .vip {
-    border-color: #ff6e9a;
+    border-color: #4aa9c2;
     color: rgb(0, 0, 0);
 }
-.parb {
-    border-color: #ff5c8d;
+
+.vip-vip {
+    border-color: #36859e;
     color: rgb(0, 0, 0);
+}
+
+.text {
+    font-weight: bold;
+    display: inline;
 }
 .wishes {
     margin-top: 30px;
