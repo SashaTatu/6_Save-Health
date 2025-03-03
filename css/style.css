@@ -1,0 +1,185 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    background-color: #fdd0cf;
+    background-image: url(../img/background.jpeg);
+    background-size: cover;
+}
+
+h1 {
+    width: 260px;
+    font-size: 36px;
+    line-height: 36px;
+    border-left: 2px solid #cccccc;
+}
+.site-header p {
+    font-size: larger;
+}
+
+h2 {
+    padding-bottom: 12px;
+    border-bottom: 2px solid #cccccc;
+}
+span {
+   font-weight: bold;
+   display: block;
+}
+
+
+.site-header {
+    margin-bottom: 20px;
+    width: 100%;
+    min-height: 100%;
+    background-image: url('../img/depositphotos_182141194-stock-photo-february-14-marked-as-valentines.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+
+.container {
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 1%;
+
+}
+
+.features p {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin: 0 5px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 70px;
+  }
+
+  .feature-kitten {
+    padding-top: 60px;
+    background-image: url("../img/valentines.png");
+  }
+  
+  .feature-cat {
+    padding-top: 60px;
+    background-image: url("../img/romantic-dinner-4233556.png");
+  }
+  
+  .feature-train {
+    padding-top: 60px;
+    background-image: url("../img/flower-bouquet-6644645.png");
+  }
+
+.history {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.presents {
+    width: 250px;
+    float: left;
+    padding: 10px;
+    border:#cccccc;
+    border-radius: 30%;
+}
+
+.marry {
+    width: 300px;
+    float: right;
+    padding: 10px;
+    border:#cccccc;
+    border-radius: 30%;
+}
+
+.tradition-list {
+    padding: 0;
+    list-style: none;
+  }
+
+
+.tradition-item {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    border-left: 10px solid #ffa4c0;
+    color: #000000;
+}
+  
+.standard {
+    border-color:#ff92b3;
+    color: rgb(0, 0, 0);
+}
+.par {
+    border-color:#ff80a6;
+    color: rgb(0, 0, 0);
+}
+.vip {
+    border-color: #ff6e9a;
+    color: rgb(0, 0, 0);
+}
+.parb {
+    border-color:#ff5c8d;
+    color: rgb(0, 0, 0);
+}
+.wishes {
+    margin-top: 30px;
+    text-align: center;
+}
+/*Кнопка побажань*/
+#btn_wishes {
+    background:#ff6e9a ;
+    border:5px solid #ffa4c0;
+    color: rgb(255, 255, 255);
+    cursor:pointer;
+    font-size: large;
+    padding: 10px 20px;
+}
+#btn_wishes:hover {
+    background-color: #eb668e;
+}
+/*Секція випадкових побажань*/
+#p_wishes {
+    height: 40px;
+    font-size: 25px;
+    line-height: 40px;
+    color: #ff6e9a;
+    text-align: justify;
+}
+
+/*Підвал сайту*/
+.site-footer {
+    display: flex;
+    justify-content:space-between;
+    color: #ffffff;
+}
+
+.site-footer p {
+    background-color: #ff6e9a;
+    padding: 10px 20px;
+    border-radius: 0px 10px;
+    border:1px solid #ffa4c0;
+    color: #ffffff;
+    cursor: pointer;
+
+}
+#p-love-img {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 80px;
+}
+#btn-buy-hearts:hover {
+    background-color: #eb668e;
+}
+.site-footer p:last-child {
+    cursor: pointer;
+}
+#count-of-hearts:hover {
+    background-color: #eb668e;
+}
