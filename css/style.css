@@ -127,28 +127,25 @@ span {
     font-weight: bold;
     display: inline;
 }
-.wishes {
+.advice {
     margin-top: 30px;
     text-align: center;
 }
 /*Кнопка побажань*/
-#btn_wishes {
-    background: #ff6e9a;
-    border: 5px solid #ffa4c0;
+#btn_advice {
+    background: linear-gradient(90deg, #72d3ef, #4aa9c2);
+    border: 5px solid rgba(54, 133, 158, 0.8);
     color: rgb(255, 255, 255);
     cursor: pointer;
     font-size: large;
     padding: 10px 20px;
 }
-#btn_wishes:hover {
-    background-color: #eb668e;
-}
 /*Секція випадкових побажань*/
-#p_wishes {
+#p-advice {
     height: 40px;
     font-size: 25px;
     line-height: 40px;
-    color: #ff6e9a;
+    color: #36859e;
     text-align: justify;
 }
 
@@ -160,25 +157,19 @@ span {
 }
 
 .site-footer p {
-    background-color: #ff6e9a;
+    background:linear-gradient(90deg, #72d3ef, #4aa9c2);
     padding: 10px 20px;
     border-radius: 0px 10px;
-    border: 1px solid #ffa4c0;
+    border: 1px solid #ffffff;
     color: #ffffff;
     cursor: pointer;
 }
-#p-love-img {
+#p-medical-img {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80px;
 }
-#btn-buy-hearts:hover {
-    background-color: #eb668e;
-}
 .site-footer p:last-child {
     cursor: pointer;
-}
-#count-of-hearts:hover {
-    background-color: #eb668e;
 }
