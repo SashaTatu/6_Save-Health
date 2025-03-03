@@ -3,9 +3,10 @@ body {
     font-size: 15px;
     line-height: 18px;
     color: #000000;
-    background-color: #fdd0cf;
-    background-image: url(../img/background.jpg) no-repeat;
-    
+    background-color: #72d3ef;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 h1 {
@@ -74,17 +75,15 @@ span {
     background-image: url('../img/sleep.png');
 }
 
-
-
-.history {
+.important {
     margin-bottom: 30px;
     padding-bottom: 20px;
 }
 
-.presents {
-    width: 250px;
+.person {
+    width: 100px;
     float: left;
-    padding: 10px;
+    padding: 5px;
     border: #cccccc;
     border-radius: 30%;
 }
