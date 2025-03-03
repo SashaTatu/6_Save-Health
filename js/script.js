@@ -1,46 +1,25 @@
 console.log('Script connected');
 
-const arrayOfLoveadvice = [
-    'Бажаю тобі нескінченної любові та тепла!',
-    'Нехай твоє серце завжди буде сповнене ніжності.',
-    'Нехай кожен день приносить радість і кохання.',
-    'Бажаю, щоб поруч завжди була людина, яка тебе кохає.',
-    'Нехай кохання буде чистим, щирим і взаємним.',
-    'Нехай у твоєму житті буде багато обіймів і поцілунків.',
-    'Бажаю, щоб твоє серце ніколи не знало болю і смутку.',
-    'Нехай кохання наповнює кожен твій день яскравими емоціями.',
-    'Бажаю вірного і турботливого партнера поруч.',
-    'Нехай твоє серце завжди знаходить відгук у іншому серці.',
-    'Бажаю, щоб ваше кохання було вічним і міцним.',
-    'Нехай твоє життя буде наповнене щасливими моментами з коханою людиною.',
-    'Бажаю пристрасних і незабутніх поцілунків.',
-    'Нехай твоя любов буде натхненням для нових звершень.',
-    'Бажаю романтики і казкових моментів у стосунках.',
-    'Нехай ваші серця б’ються в унісон назавжди.',
-    'Бажаю, щоб ваше кохання було міцним, як діамант.',
-    'Нехай кожен день приносить вам нові причини для щастя разом.',
-    'Бажаю багато тепла, розуміння і гармонії у відносинах.',
-    'Нехай ваше кохання буде яскравим, як найкрасивіший схід сонця!',
+const arrayOfAdvice = [
+    "Дотримуйтесь режиму дня", "Пийте достатньо води", "Регулярні прогулянки", "Збалансоване харчування", "Захист від стресу", "Фізична активність", "Контролюйте вагу", "Обмежте цукор", "Розтяжка вранці", "Слідкуйте за поставою", "Періодичний відпочинок", "Вітаміни та мікроелементи", "Зменшіть споживання солі", "Детоксикація", "Сон не менше 7 годин", "Відмова від куріння", "Позитивне мислення", "Слідкуйте за гігієною", "Планові обстеження", "Мінімізуйте алкоголь"
 ];
-let countOfHearts = 5;
-console.log('countOfHearts ' + countOfHearts);
+let countOfPills = 5;
+console.log('countOfPills ' + countOfPills);
 
-document.getElementById('count-of-pills').innerText = '🧡'.repeat(
-    countOfHearts
-);
+document.getElementById('count-of-pills').innerText = '💊'.repeat(countOfPills);
 
 document.getElementById('btn_advice').addEventListener('click', () => {
     console.log('Button clicked');
 
-    let index = Math.floor(Math.random() * arrayOfLoveadvice.length);
+    let index = Math.floor(Math.random() * arrayOfAdvice.length);
 
     //console.log('Номер елементу масиву - ', index);
-    document.getElementById('p-advice').innerText = arrayOfLoveadvice[index];
+    document.getElementById('p-advice').innerText = arrayOfAdvice[index];
 
-    countOfHearts--;
-    console.log('countOfHearts ' + countOfHearts);
+    countOfPills--;
+    console.log('countOfPills ' + countOfPills);
     document.getElementById('count-of-pills').innerText =
-        '🧡'.repeat(countOfHearts) + '🤍'.repeat(5 - countOfHearts);
+        '💊'.repeat(countOfPills) + '❌'.repeat(5 - countOfPills);
 
     let randomIMG = Math.floor(Math.random() * 13) + 1;
     console.log('randomIMG ' + randomIMG);
@@ -49,23 +28,23 @@ document.getElementById('btn_advice').addEventListener('click', () => {
 
     document.getElementById('medical-img').style.display = 'flex';
 
-    if (countOfHearts == 0) {
+    if (countOfPills == 0) {
         document.getElementById('btn_advice').style.display = 'none';
         document.getElementById('count-of-pills').innerText =
-            ' Придбайте нові сердечка🧡';
+            ' Придбайте нові сердечка💊';
     }
 });
 
 document.getElementById('count-of-pills').addEventListener('click', () => {
-    if (countOfHearts == 0) {
-        alert('Придбати сердечка можна натиснувши кнопку "Купити🧡"');
+    if (countOfPills == 0) {
+        alert('Придбати сердечка можна натиснувши кнопку "Купити💊"');
     }
 });
 
 document.getElementById('btn-buy-pills').addEventListener('click', () => {
-    countOfHearts = 5;
-    document.getElementById('count-of-pills').innerText = '🧡'.repeat(
-        countOfHearts
+    countOfPills = 5;
+    document.getElementById('count-of-pills').innerText = '💊'.repeat(
+        countOfPills
     );
     document.getElementById('btn_advice').style.display = 'inline-block';
     document.getElementById('p-advice').innerText = '';
