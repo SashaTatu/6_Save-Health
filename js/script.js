@@ -37,7 +37,7 @@ document.getElementById('btn_advice').addEventListener('click', () => {
 
 document.getElementById('count-of-pills').addEventListener('click', () => {
     if (countOfPills == 0) {
-        alert('Придбати сердечка можна натиснувши кнопку "Купити💊"');
+        alert('Придбати пігулки можна натиснувши кнопку "Купити💊"');
     }
 });
 
