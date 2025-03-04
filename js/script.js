@@ -31,7 +31,7 @@ document.getElementById('btn_advice').addEventListener('click', () => {
     if (countOfPills == 0) {
         document.getElementById('btn_advice').style.display = 'none';
         document.getElementById('count-of-pills').innerText =
-            ' Придбайте нові сердечка💊';
+            ' Придбайте нові пігулки💊';
     }
 });
 
