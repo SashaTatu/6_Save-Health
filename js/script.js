@@ -30,13 +30,6 @@ document.getElementById('btn_advice').addEventListener('click', () => {
 
     if (countOfPills == 0) {
         document.getElementById('btn_advice').style.display = 'none';
-        document.getElementById('count-of-pills').innerText =
-            'Придбайте нові пігулки💊';
-    }
-});
-
-document.getElementById('count-of-pills').addEventListener('click', () => {
-    if (countOfPills == 0) {
         alert('Придбати пігулки можна натиснувши кнопку "Купити💊"');
     }
 });
