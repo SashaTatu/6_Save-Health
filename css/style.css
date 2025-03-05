@@ -131,6 +131,24 @@ span {
     margin-top: 30px;
     text-align: center;
 }
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.main-image{
+    width: 400px;
+}
+
+.arrow-image{
+    width: 64px;
+    height: 64px;
+}
 /*Кнопка побажань*/
 #btn_advice {
     background: linear-gradient(90deg, #72d3ef, #4aa9c2);
