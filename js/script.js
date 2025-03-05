@@ -45,3 +45,30 @@ document.getElementById('btn-buy-pills').addEventListener('click', () => {
 
     console.log('btn_buy-hearts clicked');
 });
+
+let number=Math.floor(1)
+console.log('number '+number)
+document.getElementById('btn_right_arrow').addEventListener('click', () => {
+    console.log('Right arrow clicked');
+
+    number++
+     if (number>3) {
+        number=1
+    }
+    document.getElementById('doctor-img').src = `img/pictures-gallery/${number}.jpg`;
+    document.getElementById('doctor-img').alt = 'Doctors';
+ })   
+   
+
+document.getElementById('btn_left_arrow').addEventListener('click', () => {
+    console.log('Left arrow clicked');
+
+    number--
+    if (number <= 0) {  
+        number = 3;
+    }
+    document.getElementById('doctor-img').src = `img/pictures-gallery/${number}.jpg`;
+    document.getElementById('doctor-img').alt = 'Doctors';
+    
+    
+})

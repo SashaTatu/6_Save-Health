@@ -149,6 +149,14 @@ span {
     width: 64px;
     height: 64px;
 }
+
+#btn_right_arrow{
+    cursor: pointer;
+}
+
+#btn_left_arrow{
+    cursor: pointer;
+}
 /*Кнопка побажань*/
 #btn_advice {
     background: linear-gradient(90deg, #72d3ef, #4aa9c2);
