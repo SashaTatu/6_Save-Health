@@ -6,6 +6,8 @@ const arrayOfAdvice = [
 let countOfPills = 5;
 console.log('countOfPills ' + countOfPills);
 
+let showAlert = 1;
+
 document.getElementById('count-of-pills').innerText = '💊'.repeat(countOfPills);
 
 document.getElementById('btn_advice').addEventListener('click', () => {
@@ -32,7 +34,11 @@ document.getElementById('btn_advice').addEventListener('click', () => {
         document.getElementById("btn_advice").disabled = true;
         document.getElementById("btn_advice").style.background = 'grey';
         document.getElementById("btn_advice").style.border = '5px solid grey';
-        alert('Придбати пігулки можна натиснувши кнопку "Купити💊"');
+        if (showAlert){
+            alert('Придбати пігулки можна натиснувши кнопку "Купити💊"');
+            showAlert=0
+        }
+    
     }
 });
 
