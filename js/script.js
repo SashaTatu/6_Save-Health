@@ -29,7 +29,7 @@ document.getElementById('btn_advice').addEventListener('click', () => {
     document.getElementById('medical-img').style.display = 'flex';
 
     if (countOfPills == 0) {
-        document.getElementById('btn_advice').style.display = 'none';
+        document.getElementById("btn_advice").disabled = true;
         alert('Придбати пігулки можна натиснувши кнопку "Купити💊"');
     }
 });
