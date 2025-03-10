@@ -167,6 +167,11 @@ span {
     font-size: large;
     padding: 10px 20px;
 }
+
+#btn_advice:hover {
+    background: linear-gradient(90deg, #5cb6d4, #3b8ea7);
+    border: 5px solid rgba(40, 110, 130, 0.8);
+}
 /*Секція випадкових побажань*/
 #p-advice {
     height: 40px;
@@ -191,6 +196,10 @@ span {
     color: #ffffff;
     cursor: pointer;
 }
+.site-footer p:hover:first-child {
+    background: linear-gradient(90deg, #5cb6d4, #3b8ea7);
+}
+
 #p-medical-img {
     display: flex;
     justify-content: center;

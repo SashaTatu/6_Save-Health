@@ -30,6 +30,8 @@ document.getElementById('btn_advice').addEventListener('click', () => {
 
     if (countOfPills == 0) {
         document.getElementById("btn_advice").disabled = true;
+        document.getElementById("btn_advice").style.background = 'grey';
+        document.getElementById("btn_advice").style.border = '5px solid grey';
         alert('Придбати пігулки можна натиснувши кнопку "Купити💊"');
     }
 });
@@ -42,6 +44,10 @@ document.getElementById('btn-buy-pills').addEventListener('click', () => {
     document.getElementById('btn_advice').style.display = 'inline-block';
     document.getElementById('p-advice').innerText = '';
     document.getElementById('medical-img').style.display = 'none';
+    document.getElementById("btn_advice").disabled = false;
+    document.getElementById("btn_advice").style.background = 'linear-gradient(90deg, #72d3ef, #4aa9c2)';
+    document.getElementById("btn_advice").style.border = '5px solid rgba(54, 133, 158, 0.8)';
+    
 
     console.log('btn_buy-hearts clicked');
 });
