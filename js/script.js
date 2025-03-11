@@ -25,7 +25,7 @@ const arrayOfAdvice = [
 let countOfPills = 5;
 console.log('countOfPills ' + countOfPills);
 
-let showAlert = 2;
+let showAlert = 3;
 if (showAlert) {
     alert('Якщо що калькулятор я видалю');
     showAlert--;
@@ -82,9 +82,17 @@ document.getElementById('btn-buy-pills').addEventListener('click', () => {
     console.log('btn_buy-hearts clicked');
 });
 
+
+let press = 0
+
 document.getElementById('btn_calculate').addEventListener('click', () => {
     console.log('Calculate clicked');
 
+    press++
+    console.log('Person press button '+press)
+    if (press==3){
+        alert('Поставите хорошу оцінку?)')
+    }
 
     let weight = parseFloat(document.getElementById('weight').value);
     console.log('weight ' + weight);
