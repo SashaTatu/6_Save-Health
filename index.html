@@ -76,9 +76,58 @@
             <section>
                 <h2>Галерея</h2>
                 <section class="gallery">
-                    <img src="img/left-arrow.png" alt="left-arrow" class="arrow-image" id="btn_left_arrow">
-                    <img src="img/pictures-gallery/1.jpg" alt="images" class="main-image" id="doctor-img">
-                    <img src="img/rigth-arrow.png" alt="right-arrow" class="arrow-image" id="btn_right_arrow">
+                    <img
+                        src="img/left-arrow.png"
+                        alt="left-arrow"
+                        class="arrow-image"
+                        id="btn_left_arrow"
+                    />
+                    <img
+                        src="img/pictures-gallery/1.jpg"
+                        alt="images"
+                        class="main-image"
+                        id="doctor-img"
+                    />
+                    <img
+                        src="img/rigth-arrow.png"
+                        alt="right-arrow"
+                        class="arrow-image"
+                        id="btn_right_arrow"
+                    />
+                </section>
+            </section>
+
+            <section>
+                <h2>Калькулятор ІМТ</h2>
+                <h3>Що таке ІМТ?</h3>
+                <p>
+                    <b>Індекс маси тіла (ІМТ)</b> – це показник, який допомагає
+                    оцінити співвідношення вашої ваги до зросту та визначити, чи
+                    знаходиться ваша маса тіла в межах норми.
+                </p>
+                <section class="calculator-section">
+                    <div class="calculator">
+                        <div class="calculatorform">
+                            <form class="calculatorlabel">
+                                <p>Введіть масу тіла:</p>
+                                <input type="number" id="weight" />
+                                <p>кг</p>
+                            </form>
+                            <form class="calculatorlabel">
+                                <p>Введіть зріст:</p>
+                                <input type="number" id="height" />
+                                <p>см</p>
+                            </form>
+                            <button id="btn_calculate">Розрахувати</button>
+                            <p id="incorrect-value"></p>
+                        </div>
+                        <div id="your-imt-label">
+                            <span>Ваш ІМТ:</span>
+                            <p id="your-imt"></p>
+                            <p id="your-imt-result"></p>
+                            <p id="your-imt-wish"></p>
+                        </div>
+                    </div>
                 </section>
             </section>
 

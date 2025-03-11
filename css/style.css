@@ -132,6 +132,79 @@ span {
     text-align: center;
 }
 
+.calculator-section{
+    height: 250px;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 20px;
+}
+
+
+.calculatorform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    
+}
+
+.calculatorlabel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: baseline;
+    gap: 10px;
+    height: 80px;
+    
+    
+}
+
+input{
+    width: 80px;
+    height: 25px;
+    border: 2px solid #b1b1b1;
+    border-radius: 5px;
+}
+
+#your-imt-label{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 350px;
+}
+
+#btn_calculate{
+    background: linear-gradient(90deg, #72d3ef, #4aa9c2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: large;
+    cursor: pointer;
+}
+
+#btn_calculate:hover {
+    background: linear-gradient(90deg, #5cb6d4, #3b8ea7);
+}
+
+#incorrect-value{
+    font-weight: bold;
+    color: rgb(255, 29, 29);
+}
+
+#your-imt-wish{
+    font-size: 15px;
+    text-align: center;
+}
+
 .gallery {
     display: flex;
     flex-direction: row;
@@ -141,21 +214,21 @@ span {
     width: 100%;
 }
 
-.main-image{
+.main-image {
     width: 400px;
     height: 300px;
 }
 
-.arrow-image{
+.arrow-image {
     width: 64px;
     height: 64px;
 }
 
-#btn_right_arrow{
+#btn_right_arrow {
     cursor: pointer;
 }
 
-#btn_left_arrow{
+#btn_left_arrow {
     cursor: pointer;
 }
 /*Кнопка побажань*/
@@ -189,19 +262,17 @@ span {
 }
 
 .site-footer p {
-    background:linear-gradient(90deg, #72d3ef, #4aa9c2);
+    background: linear-gradient(90deg, #72d3ef, #4aa9c2);
     padding: 10px 20px;
     border-radius: 0px 10px;
     border: 1px solid #ffffff;
     color: #ffffff;
-    
 }
 .site-footer p:first-child {
     cursor: pointer;
 }
 .site-footer p:hover:first-child {
     background: linear-gradient(90deg, #5cb6d4, #3b8ea7);
-    
 }
 
 #p-medical-img {
