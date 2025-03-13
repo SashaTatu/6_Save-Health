@@ -90,16 +90,18 @@ document.getElementById('btn_calculate').addEventListener('click', () => {
     console.log('weight ' + weight);
 
     let height = parseFloat(document.getElementById('height').value);
-    let heightinm=height*0.01
-    console.log('height ' + heightinm);
+    console.log('height ' + height);
 
     if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
         document.getElementById('incorrect-value').innerText = 'Введено не коректне значення!'
+        document.getElementById('incorrect-value').style.display = 'block'
         document.getElementById('your-imt').style.display='none'
         document.getElementById('your-imt-result').style.display='none'
         document.getElementById('your-imt-wish').style.display='none'
         console.log('Value is wrong')   
     } else {
+        let heightinm=height*0.01
+        console.log('heightinm ' + heightinm);
         let imtnoround = parseFloat(weight / heightinm ** 2);
         let imt =imtnoround.toFixed(1);
         console.log('IMT ' + imt);
