@@ -71,3 +71,4 @@ document.getElementById('back_btn').addEventListener('click', () => {
         document.getElementById('back_btn').style.display = 'none'
     }
 })
+
