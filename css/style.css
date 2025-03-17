@@ -185,14 +185,17 @@ input{
     background: linear-gradient(90deg, #72d3ef, #4aa9c2);
     padding: 10px 20px;
     border-radius: 10px;
-    border: 1px solid #ffffff;
+    border: 0px solid #ffffff;
     color: #ffffff;
     font-size: large;
     cursor: pointer;
 }
 
+
+
 #btn_calculate:hover {
     background: linear-gradient(90deg, #5cb6d4, #3b8ea7);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
 }
 
 #incorrect-value{
@@ -210,13 +213,20 @@ input{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     width: 100%;
 }
 
 .main-image {
     width: 400px;
     height: 300px;
+    
+}
+#doctor-img{
+    display: block;
+    box-shadow: 12px 10px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 1s ease;
+    opacity: 0;
 }
 
 .arrow-image {
@@ -228,9 +238,27 @@ input{
     cursor: pointer;
 }
 
+#btn_right_arrow:hover{
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
+#btn_right_arrow:active{
+    box-shadow: 0 0 1em rgba(33, 150, 243, 1);
+}
+
 #btn_left_arrow {
     cursor: pointer;
+    
 }
+
+#btn_left_arrow:hover{
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
+#btn_left_arrow:active{
+    box-shadow: 0px 0px 1em rgba(33, 150, 243, 1);
+}
+
 /*Кнопка побажань*/
 #btn_advice {
     background: linear-gradient(90deg, #72d3ef, #4aa9c2);
@@ -244,6 +272,7 @@ input{
 #btn_advice:hover {
     background: linear-gradient(90deg, #5cb6d4, #3b8ea7);
     border: 5px solid rgba(40, 110, 130, 0.8);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
 }
 /*Секція випадкових побажань*/
 #p-advice {
@@ -265,7 +294,7 @@ input{
     background: linear-gradient(90deg, #72d3ef, #4aa9c2);
     padding: 10px 20px;
     border-radius: 0px 10px;
-    border: 1px solid #ffffff;
+    border: 0px solid #ffffff;
     color: #ffffff;
 }
 .site-footer p:first-child {
@@ -273,6 +302,7 @@ input{
 }
 .site-footer p:hover:first-child {
     background: linear-gradient(90deg, #5cb6d4, #3b8ea7);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
 }
 
 #p-medical-img {

@@ -22,6 +22,13 @@ const arrayOfAdvice = [
     'Відвідуйте планові обстеження',
     'Виключіть алкоголь',
 ];
+
+const arrayOfGalleryImeges = [
+    '1.jpg',
+    '2.jpg',
+    '3.jpg'
+]
+
 let countOfPills = 5;
 console.log('countOfPills ' + countOfPills);
 
@@ -128,30 +135,50 @@ document.getElementById('btn_calculate').addEventListener('click', () => {
     }
 });
 
-let number = Math.floor(1);
+let number = 0;
 console.log('number ' + number);
+
+
+document.getElementById('doctor-img').setAttribute('src', `img/pictures-gallery/${arrayOfGalleryImeges[number]}`)
+
 document.getElementById('btn_right_arrow').addEventListener('click', () => {
     console.log('Right arrow clicked');
-
     number++;
-    if (number > 3) {
-        number = 1;
+    if (number == arrayOfGalleryImeges.length) {
+        number = 0;
     }
-    document.getElementById(
-        'doctor-img'
-    ).src = `img/pictures-gallery/${number}.jpg`;
-    document.getElementById('doctor-img').alt = 'Doctors';
-});
+    document.getElementById('doctor-img').setAttribute('src', `img/pictures-gallery/${arrayOfGalleryImeges[number]}`)
+
+    amin(img)
+})
 
 document.getElementById('btn_left_arrow').addEventListener('click', () => {
     console.log('Left arrow clicked');
-
     number--;
-    if (number <= 0) {
-        number = 3;
+    if (number ==-1) {
+        number = arrayOfGalleryImeges.length - 1;
     }
-    document.getElementById(
-        'doctor-img'
-    ).src = `img/pictures-gallery/${number}.jpg`;
-    document.getElementById('doctor-img').alt = 'Doctors';
-});
+    document.getElementById('doctor-img').setAttribute('src', `img/pictures-gallery/${arrayOfGalleryImeges[number]}`)
+
+    amin(img)
+})
+
+
+window.onload = () => {
+    document.getElementById('doctor-img').style.opacity = '1'; 
+};
+
+function amin(img) {
+    const mainImage = document.getElementById('doctor-img');
+    
+    mainImage.style.transition = 'opacity 0.5s';
+    mainImage.style.opacity = '0'; 
+    
+    setTimeout(() => {
+        mainImage.setAttribute('src', `img/pictures-gallery/${img}`);
+        
+        setTimeout(() => {
+            mainImage.style.opacity = '1';
+        }, 50); 
+    }, 500); 
+}
