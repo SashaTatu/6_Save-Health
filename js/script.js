@@ -32,11 +32,8 @@ const arrayOfGalleryImeges = [
 let countOfPills = 5;
 console.log('countOfPills ' + countOfPills);
 
-let showAlert = 2;
-if (showAlert) {
-    alert('Якщо що калькулятор я видалю');
-    showAlert--;
-}
+let showAlert = 1;
+
 document.getElementById('count-of-pills').innerText = '💊'.repeat(countOfPills);
 
 document.getElementById('btn_advice').addEventListener('click', () => {
@@ -141,44 +138,66 @@ console.log('number ' + number);
 
 document.getElementById('doctor-img').setAttribute('src', `img/pictures-gallery/${arrayOfGalleryImeges[number]}`)
 
+
+
 document.getElementById('btn_right_arrow').addEventListener('click', () => {
     console.log('Right arrow clicked');
-    number++;
+
+    setTimeout(() => {
+        number++;
     if (number == arrayOfGalleryImeges.length) {
         number = 0;
     }
     document.getElementById('doctor-img').setAttribute('src', `img/pictures-gallery/${arrayOfGalleryImeges[number]}`)
+}, 500);
 
-    amin(img)
+    MyFunction_rigth()
+    
 })
 
 document.getElementById('btn_left_arrow').addEventListener('click', () => {
     console.log('Left arrow clicked');
-    number--;
+    setTimeout(() => {
+        number--;
     if (number ==-1) {
         number = arrayOfGalleryImeges.length - 1;
     }
     document.getElementById('doctor-img').setAttribute('src', `img/pictures-gallery/${arrayOfGalleryImeges[number]}`)
+}, 500);
 
-    amin(img)
-})
-
-
-window.onload = () => {
-    document.getElementById('doctor-img').style.opacity = '1'; 
-};
-
-function amin(img) {
-    const mainImage = document.getElementById('doctor-img');
+    MyFunction_left()
     
-    mainImage.style.transition = 'opacity 0.5s';
-    mainImage.style.opacity = '0'; 
-    
+});
+
+function MyFunction_rigth() {
+
+    console.log('My function right on');
+    document.getElementById('doctor-img').style.transform = 'translateX(500px)'
+
     setTimeout(() => {
-        mainImage.setAttribute('src', `img/pictures-gallery/${img}`);
-        
-        setTimeout(() => {
-            mainImage.style.opacity = '1';
-        }, 50); 
-    }, 500); 
+        document.getElementById('doctor-img').style.transform = 'translateX(-500px)'
+        document.getElementById('doctor-img').style.opacity = '0'
+    }, 300);
+
+    setTimeout(() => {
+        document.getElementById('doctor-img').style.opacity = '1'
+        document.getElementById('doctor-img').style.transform = 'translateX(0px)'
+    }, 600);
 }
+
+function MyFunction_left() {
+    console.log('My function left on');
+    document.getElementById('doctor-img').style.transform = 'translateX(-500px)'
+    
+
+    setTimeout(() => {
+        document.getElementById('doctor-img').style.opacity = '0'
+        document.getElementById('doctor-img').style.transform = 'translateX(500px)'
+    }, 300);
+
+    setTimeout(() => {
+        document.getElementById('doctor-img').style.opacity = '1'
+        document.getElementById('doctor-img').style.transform = 'translateX(0px)'
+    }, 600);
+}
+ 
