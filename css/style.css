@@ -225,13 +225,19 @@ input{
 }
 
 #border-img{
+    width: 500px;
+    height: 400px;
     overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #doctor-img{
     display: block;
     transition: transform 0.4s ease-in-out, opacity 0.1s ease-in-out;
     opacity: 1;
+    box-shadow: 10px 15px 12px rgba(0, 0, 0, 0.2);
 }
 .arrow-image {
     width: 64px;

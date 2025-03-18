@@ -172,10 +172,10 @@ document.getElementById('btn_left_arrow').addEventListener('click', () => {
 function MyFunction_rigth() {
 
     console.log('My function right on');
-    document.getElementById('doctor-img').style.transform = 'translateX(500px)'
+    document.getElementById('doctor-img').style.transform = 'translateX(120%)'
 
     setTimeout(() => {
-        document.getElementById('doctor-img').style.transform = 'translateX(-500px)'
+        document.getElementById('doctor-img').style.transform = 'translateX(-120%)'
         document.getElementById('doctor-img').style.opacity = '0'
     }, 300);
 
@@ -187,12 +187,12 @@ function MyFunction_rigth() {
 
 function MyFunction_left() {
     console.log('My function left on');
-    document.getElementById('doctor-img').style.transform = 'translateX(-500px)'
+    document.getElementById('doctor-img').style.transform = 'translateX(-120%)'
     
 
     setTimeout(() => {
         document.getElementById('doctor-img').style.opacity = '0'
-        document.getElementById('doctor-img').style.transform = 'translateX(500px)'
+        document.getElementById('doctor-img').style.transform = 'translateX(120%)'
     }, 300);
 
     setTimeout(() => {
