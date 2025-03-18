@@ -54,6 +54,12 @@ document.getElementById('fixed-message').addEventListener('click', () => {
     document.getElementById('fixed-message-container').style.transform = 'scale(1, 1)'
 });
 
+setTimeout(() => {
+    document.getElementById('fixed-message').remove();
+    console.log('animation removed')
+}, 30000);
+
+
 document.getElementById('btn-close').addEventListener('click', () => {
     console.log('button close clicked')
     document.getElementById('fixed-message-container').style.visibility = 'hidden'
