@@ -29,6 +29,43 @@ const arrayOfGalleryImeges = [
     '3.jpg'
 ]
 
+let showmessage = 1;
+
+document.getElementById('fixed-message').style.animation = 'none'
+document.getElementById('fixed-message-container').style.visibility = 'hidden'
+
+if (showmessage){
+    setTimeout(() => {
+        document.getElementById('fixed-message').style.transform = 'translateX(0px)'
+    }, 2000);
+
+    setTimeout(() => {
+        document.getElementById('fixed-message').style.animation = 'swing 1s ease-in-out infinite'
+    }, 3000);
+
+    showmessage = 0;
+}
+document.getElementById('fixed-message').addEventListener('click', () => {
+    console.log('❗ clicked')
+    document.getElementById('fixed-message').style.visibility = 'hidden'
+    document.getElementById('fixed-message-container').style.visibility = 'visible'
+    document.getElementById('fixed-message-container').style.transform = 'translateX(0px)'
+    document.getElementById('fixed-message-container').style.transform = 'translateY(0px)'
+    document.getElementById('fixed-message-container').style.transform = 'scale(1, 1)'
+});
+
+document.getElementById('btn-close').addEventListener('click', () => {
+    console.log('button close clicked')
+    document.getElementById('fixed-message-container').style.visibility = 'hidden'
+})
+
+document.getElementById('btn-open').addEventListener('click', () => {
+    console.log('button open clicked')
+    document.getElementById('fixed-message-container').style.visibility = 'hidden'
+})
+
+
+
 let countOfPills = 5;
 console.log('countOfPills ' + countOfPills);
 
