@@ -276,6 +276,30 @@ input{
     text-align: center;
 }
 
+
+
+
+
+/*Вітаміни*/
+
+#p-vitamis{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.vitamin {
+    border: 2px solid #b1b1b1;
+    border-radius: 5px;
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+
+}
+
 .gallery {
     display: flex;
     flex-direction: row;

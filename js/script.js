@@ -244,3 +244,50 @@ function MyFunction_left() {
     }, 600);
 }
  
+
+
+
+const arrayOfVitaminObjects = [
+    {
+        "id":1,
+        "title":"Вітамин А",
+        "photo":"",
+        "description":"",
+        "rating":"",
+        "useful":"",
+    },
+    {
+        "id":2,
+        "title":"Вітамін Б12",
+        "photo":"",
+        "description":"",
+        "rating":"",
+        "useful":"",
+    },
+    {
+        "id":3,
+        "title":"Омега",
+        "photo":"",
+        "description":"",
+        "rating":"",
+        "useful":"",
+    },
+    {
+        "id":4,
+        "title":"Вітамін Д",
+        "photo":"",
+        "description":"",
+        "rating":"",
+        "useful":"",
+    },
+]
+
+arrayOfVitaminObjects.forEach((item) => {
+    console.log(item)
+
+    let divVitamin = document.createElement('div')
+    divVitamin.classList.add('vitamin')
+    divVitamin.innerText = item.title
+
+    document.getElementById('p-vitamis').appendChild(divVitamin)
+})
