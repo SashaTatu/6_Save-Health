@@ -99,6 +99,9 @@ h3{
     background: linear-gradient(to bottom, #ff9a9e, #f6416c);
     color: white;
 }
+#btn-close:hover {
+    background: linear-gradient(to bottom, #e0888b, #dc375f);
+}
 
 #btn-open{
     border: none;
@@ -108,6 +111,10 @@ h3{
     cursor: pointer;
     background: linear-gradient(to bottom, #42e695, #3bb2b8);
     color: white;
+}
+
+#btn-open:hover {
+    background: linear-gradient(to bottom, #39c97e, #329da3);
 }
 
 .container {
