@@ -57,7 +57,7 @@ document.getElementById('fixed-message').addEventListener('click', () => {
 setTimeout(() => {
     document.getElementById('fixed-message').remove();
     console.log('animation removed')
-}, 30000);
+}, 90000);
 
 
 document.getElementById('btn-close').addEventListener('click', () => {
