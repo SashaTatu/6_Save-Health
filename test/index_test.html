@@ -13,7 +13,7 @@
         <section>
             <div class="main">
                 <h2 id="question">1.Коли вам найкраще працюється або вчиться?</h2>
-                <div id="answer">
+                <div class="answer">
                     <div>
                         <input type="radio" name="worktime" onclick="arswer(1)">
                         <label for="answer1" class='radio_btn'>Вранці, поки голова свіжа</label>
@@ -31,8 +31,8 @@
                         <label for="answer4" class='radio_btn'>В будь-який час, якщо добре виспався/лася</label>
                     </div>
                     <div class="main_nav">
-                        <button id="back_btn">Назад</button>
-                        <button id="continue_btn">Продовжити</button>
+                        <button id="back_btn" onclick="resetSelection()">Назад</button>
+                        <button id="continue_btn" onclick="resetSelection()">Продовжити</button>
                     </div>
                 </div>
             </div>

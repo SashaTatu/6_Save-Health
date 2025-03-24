@@ -39,15 +39,23 @@ h2 {
 }
 
 .answer label {
-    padding: 8px;
-    font-size: 15px;
+    padding: 10px;
+    font-size: 20px;
 
 }
 
 .answer input {
-    accent-color: #72d3ef;
+    accent-color: #67bed5;
     margin-right: 10px;
     cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+
+.answer input:checked + label {
+    color: #67bed5;
+    font-weight: bold;
+    
 }
 
 .main_nav{

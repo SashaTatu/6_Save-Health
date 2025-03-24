@@ -59,6 +59,11 @@ document.getElementById('continue_btn').addEventListener('click', () => {
 document.getElementById('back_btn').addEventListener('click', () => {
     numberOfQuestion--
     console.log('Question = '+numberOfQuestion)
+
+    if (numberOfQuestion==0){
+        document.getElementById('back_btn').style.display = 'none'
+    }
+
     document.getElementById('question').innerText=Questions[numberOfQuestion].question
     let labels = document.getElementsByClassName('radio_btn');
 
@@ -67,8 +72,12 @@ document.getElementById('back_btn').addEventListener('click', () => {
             labels[index].innerText = answer;
         }
     });
-    if (numberOfQuestion<0){
-        document.getElementById('back_btn').style.display = 'none'
-    }
+    
 })
 
+function resetSelection() {
+    let radios = document.querySelectorAll("input[type='radio']");
+    radios.forEach(radio => {
+        radio.checked = false;
+})
+}
