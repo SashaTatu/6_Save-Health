@@ -14,28 +14,28 @@
             <div class="main">
                 <h2 id="question">1.Коли вам найкраще працюється або вчиться?</h2>
                 <div class="result">
-                    <h3>Ви - тип хронотипу</h3>
-                    <p>якась інформація про хронотип</p>
+                    <h3 id="name-result">Ви - тип хронотипу</h3>
+                    <p id="info-result">якась інформація про хронотип</p>
                 </div>
                 <div class="answer">
                     <div>
-                        <input type="radio" name="answer" class='radio_btn' value="a">
+                        <input type="radio" name="answer" class='radio_btn' value="A">
                         <label for="answer1" class='radio_btn'>Вранці, поки голова свіжа</label>
                     </div>
                     <div>
-                        <input type="radio" name="answer" class='radio_btn' value="b">
+                        <input type="radio" name="answer" class='radio_btn' value="B">
                         <label for="answer2" class='radio_btn'>Після обіду, ближче до вечора</label>
                     </div>
                     <div>
-                        <input type="radio" name="answer" class='radio_btn' value="c">
+                        <input type="radio" name="answer" class='radio_btn' value="C">
                         <label for="answer3" class='radio_btn'>Увечері або вночі</label>
                     </div>
                     <div>
-                        <input  type="radio" name="answer" class='radio_btn' value="c">
+                        <input  type="radio" name="answer" class='radio_btn' value="D">
                         <label for="answer4" class='radio_btn'>В будь-який час, якщо добре виспався/лася</label>
                     </div>
                     <div class="main_nav">
-                        <button id="continue_btn" onclick="resetSelection()">Продовжити</button>
+                        <button id="continue_btn" onclick="resetSelection()" onclick="submitTest()">Продовжити</button>
                     </div>
                 </div>
             </div>

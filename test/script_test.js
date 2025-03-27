@@ -45,7 +45,7 @@ const Questions = [
             'Пізно лягати, бо вечір - мій час',
             'По ситуації, можу і так, і так',
         ],
-    },
+    }
 ];
 
 
@@ -131,4 +131,37 @@ function resetSelection() {
     radios.forEach((radio) => {
         radio.checked = false;
     });
+}
+
+function submitTest() {
+    let answers = {}; 
+    let questions = document.querySelectorAll('main');
+
+    questions.forEach((main, index) => {
+        let selected = main.querySelector("input[type='radio']:checked");
+        if (selected) {
+            let value = selected.value;
+            answers[value] = (answers[value] || 0) + 1;
+        }
+    });
+    
+    let maxChoice = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+
+    let resultText = "";
+    if (maxChoice === "A"){
+        document.getElementById('name-result').innerText='Ви - Жайворонок🦜'
+        document.getElementById('info-result').innerText='Ви активні вранці, швидко прокидаєтесь і любите починати справи зранку. Вечірня продуктивність знижується.'
+    }
+    if (maxChoice === "C"){
+        document.getElementById('name-result').innerText='Ви - Сова🦉'
+        document.getElementById('info-result').innerText='Найбільший пік активності – у вечірній та нічний час. Вранці прокидатися важко, а в першій половині дня ви ще сонний/а.'
+    }
+    if (maxChoice === "B"){
+        document.getElementById('name-result').innerText='Ви - Голуб🕊'
+        document.getElementById('info-result').innerText='Ваш хронотип змішаний, ви можете працювати і вранці, і ввечері, але найбільше енергії маєте вдень.'
+    }
+    if (maxChoice === "D"){
+        document.getElementById('name-result').innerText='Ви - Змішаний тип🔄'
+        document.getElementById('info-result').innerText='Ви адаптуєтесь під обставини, ваш ритм життя гнучкий, і ви можете ефективно працювати у будь-який час.'
+    }
 }
