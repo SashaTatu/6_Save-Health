@@ -58,18 +58,24 @@ let continueBtn = document.getElementById('continue_btn');
 
 
 function submitTest() {
-    let answers = {};
-    let questions = document.getElementsByClassName('radio_btn');
+    let answers = {}; // Об'єкт для підрахунку виборів
+    let questions = document.querySelectorAll(".answer"); // Отримуємо всі питання
+    let totalQuestions = Questions.length; // Кількість питань
+    let answeredCount = 0; // Лічильник відповідей
 
-    questions.forEach((radio_btn) => {
-        let selected = document.querySelector("input[name='answer']:checked");
+    console.log("lf = "+questions)
+    console.log("ls = "+totalQuestions)
+
+    questions.forEach((question, index) => {
+        let selected = document.querySelector(`input[name='answer${index}']:checked`);
         if (selected) {
+            answeredCount++; // Лічимо, скільки відповідей вибрано
             let value = selected.value;
             answers[value] = (answers[value] || 0) + 1;
         }
     });
-    
-    let maxChoice = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+
+    let maxChoice = Object.keys(answers).reduce((a, b) => (answers[a] > answers[b] ? a : b));
     
     if (maxChoice === "A"){
         document.getElementById('name-result').innerText='Ви - Жайворонок🦜'
