@@ -28,6 +28,13 @@ h1 {
     line-height: 40px;
 }
 
+.result{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+}
+
 .answer{
     display: flex;
     flex-direction: column;
@@ -78,6 +85,12 @@ h2 {
     background: linear-gradient(90deg, #c72b2b, #901010);
 }
 
+.container-continue{
+    display: flex;
+    flex-direction: column
+
+}
+
 #continue_btn{
     background: linear-gradient(90deg, #2fbd1c, #19b604);
     padding: 10px 20px;
@@ -86,15 +99,23 @@ h2 {
     color: #ffffff;
     font-size: large;
     cursor: pointer;
+    
 }
 
 #continue_btn:hover{
     background: linear-gradient(90deg, #249617, #138d03);
 }
 
+#notselected-value{
+    font-weight: bold;
+    color: rgb(255, 29, 29);
+}
+
+
 .site-footer{
     margin-top: 50px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -109,5 +130,22 @@ h2 {
 }
 
 #back-to-site_btn:hover{
+    background: linear-gradient(90deg, #2a8da7, #3aa8c5);
+}
+
+#redo-test_btn{
+    display: none;
+    background: linear-gradient(90deg, #35b0d2, #4dc3e4);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+
+#redo-test_btn:hover{
     background: linear-gradient(90deg, #2a8da7, #3aa8c5);
 }
