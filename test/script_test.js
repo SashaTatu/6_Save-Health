@@ -48,25 +48,57 @@ const Questions = [
     },
 ];
 
-document.getElementById('back_btn').style.display = 'none';
+
 
 let numberOfQuestion = 0;
 console.log('Question = ' + numberOfQuestion);
 
+let radios = document.querySelectorAll('input[type="radio"]');
+let continueBtn = document.getElementById('continue_btn');
+
+function checkSelection() {
+    let isDisabled = ![...radios].some(radio => radio.checked);
+    continueBtn.disabled = isDisabled;
+
+    if (isDisabled) {
+        continueBtn.style.background = 'grey';
+        continueBtn.style.border = '1px solid grey';
+        continueBtn.style.cursor = 'not-allowed';
+    } else {
+        continueBtn.style.background = 'linear-gradient(90deg, #2fbd1c, #19b604)';
+        continueBtn.style.border = '1px solid white';
+        continueBtn.style.cursor = 'pointer';
+    }
+}
+
+radios.forEach(radio => radio.addEventListener('change', checkSelection));
+
+checkSelection();
 
 document.getElementById('continue_btn').addEventListener('click', () => {
+
+    numberOfQuestion++
+    function checkSelection() {
+        let isDisabled = ![...radios].some(radio => radio.checked);
+        continueBtn.disabled = isDisabled;
     
-    numberOfQuestion++;
-    document.getElementById('back_btn').style.display = 'block'
-
-    document.getElementById('question').innerText=Questions[numberOfQuestion].question
-    let labels = document.getElementsByClassName('radio_btn');
-
-    Questions[numberOfQuestion].answers.forEach((answer, index) => {
-        if (labels[index]) {
-            labels[index].innerText = answer;
+        if (isDisabled) {
+            continueBtn.style.background = 'grey';
+            continueBtn.style.border = '1px solid grey';
+            continueBtn.style.cursor = 'not-allowed';
+        } else {
+            continueBtn.style.background = 'linear-gradient(90deg, #2fbd1c, #19b604)';
+            continueBtn.style.border = '1px solid white';
+            continueBtn.style.cursor = 'pointer';
         }
-    })
+    }
+    
+    radios.forEach(radio => radio.addEventListener('change', checkSelection));
+    
+    checkSelection();
+
+   
+    
 
     console.log('Question = '+numberOfQuestion)
 
@@ -76,7 +108,6 @@ document.getElementById('continue_btn').addEventListener('click', () => {
     
     if (numberOfQuestion==5){
         document.getElementById('question').innerText="Ваш результат:"
-        document.getElementById('back_btn').style.display = 'none'
         document.getElementById('continue_btn').style.display = 'none'
         document.querySelectorAll('.radio_btn').forEach(el => el.style.display = 'none')
         document.getElementById('redo-test_btn').style.display = 'inline'
@@ -84,45 +115,16 @@ document.getElementById('continue_btn').addEventListener('click', () => {
         document.querySelectorAll('.result').forEach(el => el.style.display = 'flex')
     }
 
-    if (numberOfQuestion == 4) {
-        document.getElementById('continue_btn').innerText = 'Завершити тест';
-    }
-
-    if (numberOfQuestion == 5) {
-        document.getElementById('question').innerText = 'Ваш результат:';
-        document.getElementById('back_btn').style.display = 'none';
-        document.getElementById('continue_btn').style.display = 'none';
-        document
-            .querySelectorAll('.radio_btn')
-            .forEach((el) => (el.style.display = 'none'));
-        document.getElementById('redo-test_btn').style.display = 'inline';
-        document
-            .querySelectorAll('.site-footer')
-            .forEach((el) => (el.style.justifyContent = 'space-around'));
-        document
-            .querySelectorAll('.result')
-            .forEach((el) => (el.style.display = 'flex'));
-    }
-});
-
-document.getElementById('back_btn').addEventListener('click', () => {
-    numberOfQuestion--;
-    console.log('Question = ' + numberOfQuestion);
-
-    if (numberOfQuestion == 0) {
-        document.getElementById('back_btn').style.display = 'none';
-    }
-
-    document.getElementById('question').innerText =
-        Questions[numberOfQuestion].question;
+    document.getElementById('question').innerText=Questions[numberOfQuestion].question;
     let labels = document.getElementsByClassName('radio_btn');
 
     Questions[numberOfQuestion].answers.forEach((answer, index) => {
         if (labels[index]) {
             labels[index].innerText = answer;
         }
-    });
+    })
 });
+
 
 function resetSelection() {
     let radios = document.querySelectorAll("input[type='radio']");

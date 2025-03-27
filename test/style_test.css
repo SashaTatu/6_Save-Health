@@ -71,26 +71,6 @@ h2 {
     justify-content: space-between;
 }
 
-#back_btn{
-    background: linear-gradient(90deg, #fa3535, #b51414);
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    font-size: large;
-    cursor: pointer;
-}
-
-#back_btn:hover{
-    background: linear-gradient(90deg, #c72b2b, #901010);
-}
-
-.container-continue{
-    display: flex;
-    flex-direction: column
-
-}
-
 #continue_btn{
     background: linear-gradient(90deg, #2fbd1c, #19b604);
     padding: 10px 20px;
@@ -106,10 +86,7 @@ h2 {
     background: linear-gradient(90deg, #249617, #138d03);
 }
 
-#notselected-value{
-    font-weight: bold;
-    color: rgb(255, 29, 29);
-}
+
 
 
 .site-footer{
