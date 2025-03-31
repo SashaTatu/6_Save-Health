@@ -251,34 +251,34 @@ const arrayOfVitaminObjects = [
     {
         "id":1,
         "title":"Вітамин А",
-        "photo":"",
-        "description":"",
-        "rating":"",
-        "useful":"",
+        "photo":"vitamin-a.png",
+        "description":"Відіграє важливу роль у підтримці нормального зору, імунної системи, репродуктивної функції, росту та розвитку, а також сприяє нормальній роботі серця, легень та інших органів",
+        "rating":"4",
+        "type":"",
     },
     {
         "id":2,
         "title":"Вітамін Б12",
-        "photo":"",
-        "description":"",
-        "rating":"",
-        "useful":"",
+        "photo":"vitamin-b12.png",
+        "description":"бере участь у кровотворенні, регулює вуглеводний і жировий обмін в організмі",
+        "rating":"5",
+        "type":"",
     },
     {
         "id":3,
         "title":"Омега",
-        "photo":"",
-        "description":"",
-        "rating":"",
-        "useful":"",
+        "photo":"vitamin-omega.png",
+        "description":"Необхіден для нормального розвитку мозку та очей, а також для підтримання здоров'я серцево-судинної системи",
+        "rating":"2",
+        "type":"",
     },
     {
         "id":4,
         "title":"Вітамін Д",
-        "photo":"",
-        "description":"",
-        "rating":"",
-        "useful":"",
+        "photo":"vitamin-d.png",
+        "description":"Сприяє всмоктуванню кальцію та фосфору з їжі, що необхідно для нормальної роботи кісток, зубів та м'язів",
+        "rating":"3",
+        "type":"",
     },
 ]
 
@@ -287,7 +287,17 @@ arrayOfVitaminObjects.forEach((item) => {
 
     let divVitamin = document.createElement('div')
     divVitamin.classList.add('vitamin')
-    divVitamin.innerText = item.title
+    divVitamin.innerHTML = `
+                <p>${item.id}</p>
+                <h3>${item.title}</h3>
+                <hr>
+                <img scr = "img/vitamins/${item.photo}" alt="">
+                <p>${item.description}</p>
+                <div>
+                    <span>${'🌟'.repeat(item.rating) + '❌'.repeat(5-item.rating)}</span>
+                    <p>${item.type}</p>
+                </div>
+    `
 
     document.getElementById('p-vitamis').appendChild(divVitamin)
 })

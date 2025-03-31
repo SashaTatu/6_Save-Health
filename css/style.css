@@ -298,14 +298,44 @@ input{
 }
 
 .vitamin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 2px solid #b1b1b1;
     border-radius: 5px;
     box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
     padding: 10px;
     width: 200px;
-    height: 200px;
-
+    min-height: 300px;
+    text-align: center;
 }
+
+.vitamin p:first-child{
+    text-align: right;
+    font-size: 10px;
+    color: #b1b1b1;
+}
+
+.vitamin h3{
+    font-size: 24px;
+}
+
+.vitamin img{
+    width: 128px;
+    height: 128px;
+    
+}
+
+.vitamin p:last-child{
+    text-align: justify;
+    font-size: 28px;
+}
+.vitamin div{
+    margin-top: auto;
+    width: 100%;
+}
+
+
 
 .gallery {
     display: flex;
