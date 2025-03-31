@@ -291,7 +291,7 @@ arrayOfVitaminObjects.forEach((item) => {
                 <p>${item.id}</p>
                 <h3>${item.title}</h3>
                 <hr>
-                <img scr = "img/vitamins/${item.photo}" alt="">
+                <img src ="img/vitamins/${item.photo}" alt="">
                 <p>${item.description}</p>
                 <div>
                     <span>${'🌟'.repeat(item.rating) + '❌'.repeat(5-item.rating)}</span>

@@ -305,24 +305,34 @@ input{
     border-radius: 5px;
     box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
     padding: 10px;
-    width: 200px;
-    min-height: 300px;
+    width: 250px;
+    min-height: 250px;
+    align-items: center;
     text-align: center;
 }
 
 .vitamin p:first-child{
+    align-self: flex-end;
     text-align: right;
     font-size: 10px;
     color: #b1b1b1;
+
 }
 
 .vitamin h3{
     font-size: 24px;
 }
 
+.vitamin hr {
+    border: 1px solid #b1b1b1;
+    width: 100%;
+    margin: 20px;
+}
+
 .vitamin img{
     width: 128px;
     height: 128px;
+    
     
 }
 
