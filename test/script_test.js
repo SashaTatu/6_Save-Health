@@ -88,7 +88,6 @@ function checkSelection() {
         };
     } else {
         continueBtn.style.boxShadow = 'none';
-        continueBtn.style.background = 'linear-gradient(90deg, #2fbd1c, #19b604)'; 
     }
 }
 
