@@ -69,19 +69,27 @@ function checkSelection() {
         ? 'grey'
         : 'linear-gradient(90deg, #2fbd1c, #19b604)';
     continueBtn.style.border = isDisabled
-        ? '1px solid grey'
+        ? '0px solid grey'
         : '0px solid white';
     continueBtn.style.cursor = isDisabled ? 'not-allowed' : 'pointer';
 
-    continueBtn.addEventListener('mouseenter', () => {
-        if (!isDisabled) {
+    continueBtn.onmouseenter = null;
+    continueBtn.onmouseleave = null;
+
+    if (!isDisabled) {
+        continueBtn.onmouseenter = () => {
             continueBtn.style.boxShadow = '5px 10px 8px rgba(0, 0, 0, 0.2)';
-        }
-    });
-    
-    continueBtn.addEventListener('mouseleave', () => {
+            continueBtn.style.background = 'linear-gradient(90deg, #249617, #138d03)';
+        };
+        
+        continueBtn.onmouseleave = () => {
+            continueBtn.style.boxShadow = 'none';
+            continueBtn.style.background = 'linear-gradient(90deg, #2fbd1c, #19b604)';
+        };
+    } else {
         continueBtn.style.boxShadow = 'none';
-    });
+        continueBtn.style.background = 'linear-gradient(90deg, #2fbd1c, #19b604)'; 
+    }
 }
 
 
