@@ -12,7 +12,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     width: 750px;
-    height: 500px;
+    height: 525px;
 }
 .site-header {
     margin-bottom: 20px;
@@ -51,6 +51,7 @@ h1 {
 
 .main{
     display: none;
+    height: fit-content;
 }
 
 .result{
@@ -99,7 +100,6 @@ h2 {
 
 .answer input:checked + label {
     color: #67bed5;
-    font-weight: bold;
     
 }
 
@@ -130,7 +130,7 @@ h2 {
     margin-top: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:space-around;
 }
 
 #back-to-site_btn{
@@ -141,10 +141,7 @@ h2 {
     color: #ffffff;
     font-size: large;
     cursor: pointer;
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 307px;
 }
 
 #back-to-site_btn:hover{

@@ -57,7 +57,7 @@ const valuesArray = [];
 let numberOfQuestion = 0;
 console.log('Question = ' + numberOfQuestion);
 
-//Функція для блокування кнопки 'Продовжити'
+//Функція для блокування кнопки 'Продовжити' та зміна його стилів
 
 function checkSelection() {
     let radios = document.querySelectorAll("input[name='answer']");
@@ -98,6 +98,7 @@ checkSelection();
 document.getElementById('start_btn').addEventListener('click', () => {
     document.getElementsByClassName('main')[0].style.display = 'block';
     document.getElementById('start_btn').style.display = 'none';
+    document.getElementById('back-to-site_btn').style.marginTop = '0px';
 })
 
 document.getElementById('continue_btn').addEventListener('click', () => {
