@@ -8,11 +8,11 @@ body {
     margin: 0;
 }
 .container {
-    
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    width: 50%;
+    width: 750px;
+    height: 500px;
 }
 .site-header {
     margin-bottom: 20px;
@@ -28,11 +28,49 @@ h1 {
     line-height: 40px;
 }
 
+#start_btn{
+    background: linear-gradient(90deg, #2fbd1c, #19b604);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 0px solid #ffffff;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    width: 400px;
+    height: 60px;
+    position: absolute;
+    bottom: 330px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#start_btn:hover{
+    background: linear-gradient(90deg, #249617, #138d03);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main{
+    display: none;
+}
+
 .result{
     display: none;
     flex-direction: column;
     align-items: center;
     font-size: larger;
+}
+
+#name-result{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#info-result{
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin: 0px 50px;
 }
 
 .answer{
@@ -75,7 +113,7 @@ h2 {
     background: linear-gradient(90deg, #2fbd1c, #19b604);
     padding: 10px 20px;
     border-radius: 10px;
-    border: 1px solid #ffffff;
+    border: 0px solid #ffffff;
     color: #ffffff;
     font-size: large;
     cursor: pointer;
@@ -84,9 +122,8 @@ h2 {
 
 #continue_btn:hover{
     background: linear-gradient(90deg, #249617, #138d03);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
 }
-
-
 
 
 .site-footer{
@@ -100,14 +137,19 @@ h2 {
     background: linear-gradient(90deg, #35b0d2, #4dc3e4);
     padding: 10px 20px;
     border-radius: 10px;
-    border: 1px solid #ffffff;
+    border: 0px solid #ffffff;
     color: #ffffff;
     font-size: large;
     cursor: pointer;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #back-to-site_btn:hover{
     background: linear-gradient(90deg, #2a8da7, #3aa8c5);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
 }
 
 #redo-test_btn{
@@ -115,7 +157,7 @@ h2 {
     background: linear-gradient(90deg, #35b0d2, #4dc3e4);
     padding: 10px 20px;
     border-radius: 10px;
-    border: 1px solid #ffffff;
+    border: 0px solid #ffffff;
     color: #ffffff;
     font-size: large;
     cursor: pointer;
@@ -125,4 +167,5 @@ h2 {
 
 #redo-test_btn:hover{
     background: linear-gradient(90deg, #2a8da7, #3aa8c5);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
 }

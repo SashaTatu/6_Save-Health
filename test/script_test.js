@@ -47,47 +47,64 @@ const Questions = [
             'Пізно лягати, бо вечір - мій час',
             'По ситуації, можу і так, і так',
         ],
-    }
+    },
 ];
-
-let valuesArray = []
-
-let numberOfQuestion = 0;
-console.log('Question = ' + numberOfQuestion);
 
 //Порожній масив для value відповідей
 
+const valuesArray = [];
 
-
+let numberOfQuestion = 0;
+console.log('Question = ' + numberOfQuestion);
 
 //Функція для блокування кнопки 'Продовжити'
 
 function checkSelection() {
     let radios = document.querySelectorAll("input[name='answer']");
-    let isDisabled = ![...radios].some(radio => radio.checked);
+    let isDisabled = ![...radios].some((radio) => radio.checked);
     let continueBtn = document.getElementById('continue_btn');
 
     continueBtn.disabled = isDisabled;
-    continueBtn.style.background = isDisabled ? 'grey' : 'linear-gradient(90deg, #2fbd1c, #19b604)';
-    continueBtn.style.border = isDisabled ? '1px solid grey' : '1px solid white';
+    continueBtn.style.background = isDisabled
+        ? 'grey'
+        : 'linear-gradient(90deg, #2fbd1c, #19b604)';
+    continueBtn.style.border = isDisabled
+        ? '1px solid grey'
+        : '0px solid white';
     continueBtn.style.cursor = isDisabled ? 'not-allowed' : 'pointer';
+
+    continueBtn.addEventListener('mouseenter', () => {
+        if (!isDisabled) {
+            continueBtn.style.boxShadow = '5px 10px 8px rgba(0, 0, 0, 0.2)';
+        }
+    });
+    
+    continueBtn.addEventListener('mouseleave', () => {
+        continueBtn.style.boxShadow = 'none';
+    });
 }
+
 
 //При виборі одного з варіантів відповідей кнопка 'Продовжити' розблоковується
 
-document.querySelectorAll("input[name='answer']").forEach(radio => {
-    radio.addEventListener("change", checkSelection);
+document.querySelectorAll("input[name='answer']").forEach((radio) => {
+    radio.addEventListener('change', checkSelection);
 });
 
 checkSelection();
+
+
+
+document.getElementById('start_btn').addEventListener('click', () => {
+    document.getElementsByClassName('main')[0].style.display = 'block';
+    document.getElementById('start_btn').style.display = 'none';
+})
 
 document.getElementById('continue_btn').addEventListener('click', () => {
     numberOfQuestion++;
     checkSelection();
 
     console.log('Question = ' + numberOfQuestion);
-    
-
 
     //Заміна назви кнопки 'Продовжити' на 'Завершити тест'
 
@@ -98,18 +115,26 @@ document.getElementById('continue_btn').addEventListener('click', () => {
     //Виведення результату
 
     if (numberOfQuestion == 5) {
-        document.getElementById('question').innerText = "Ваш результат:";
+        console.log(valuesArray);
+        submitTest();
+        document.getElementById('question').innerText = 'Ваш результат:';
         document.getElementById('continue_btn').style.display = 'none';
-        document.querySelectorAll('.radio_btn').forEach(el => el.style.display = 'none');
+        document
+            .querySelectorAll('.radio_btn')
+            .forEach((el) => (el.style.display = 'none'));
         document.getElementById('redo-test_btn').style.display = 'inline';
-        document.querySelectorAll('.site-footer').forEach(el => el.style.justifyContent = 'space-around');
-        document.querySelectorAll('.result').forEach(el => el.style.display = 'flex');
+        document
+            .querySelectorAll('.site-footer')
+            .forEach((el) => (el.style.justifyContent = 'space-around'));
+        document
+            .querySelectorAll('.result')
+            .forEach((el) => (el.style.display = 'flex'));
     }
-
 
     //Для правильної заміни варіанті відповідей та питань
     if (numberOfQuestion < Questions.length) {
-        document.getElementById('question').innerText = Questions[numberOfQuestion].question;
+        document.getElementById('question').innerText =
+            Questions[numberOfQuestion].question;
         let labels = document.querySelectorAll('label.radio_btn');
 
         Questions[numberOfQuestion].answers.forEach((answer, index) => {
@@ -118,13 +143,55 @@ document.getElementById('continue_btn').addEventListener('click', () => {
             }
         });
     }
-    
 });
 
-
-//Функція для скидання варіанта відповіді при переході на наступне
+//Функція яка виконується при натиску на кнопку 'Продовжити'
 function resetSelection() {
+    //Функція для переміщення вибраного value до масиву valuesArray
+    let selectedValue = document.querySelector('input[name="answer"]:checked')?.value;
+    console.log(selectedValue);
+    valuesArray.push(selectedValue);
+
+    //Функція для скидання варіанта відповіді при переході на наступне
     document.querySelectorAll('input[type="radio"]').forEach((radio) => {
         radio.checked = false;
     });
+}
+
+//Функція для підрахування результату та виведення відповідного тексту
+
+function submitTest() {
+    const freq = {};
+    let result = null;
+
+    valuesArray.forEach((val) => {
+        freq[val] = (freq[val] || 0) + 1;
+        if (freq[val] === 2) {
+            result = val;
+        }
+    });
+
+    console.log('Найчастіше вибране '+result);
+
+    if (result === 'A') {
+        document.getElementById('name-result').innerText = 'Ви - Жайворонок🦜';
+        document.getElementById('info-result').innerText =
+            'Ви активні вранці, швидко прокидаєтесь і любите починати справи зранку. Вечірня продуктивність знижується.';
+    }
+    if (result === 'C') {
+        document.getElementById('name-result').innerText = 'Ви - Сова🦉';
+        document.getElementById('info-result').innerText =
+            'Найбільший пік активності – у вечірній та нічний час. Вранці прокидатися важко, а в першій половині дня ви ще сонний/а.';
+    }
+    if (result === 'B') {
+        document.getElementById('name-result').innerText = 'Ви - Голуб🕊';
+        document.getElementById('info-result').innerText =
+            'Ваш хронотип змішаний, ви можете працювати і вранці, і ввечері, але найбільше енергії маєте вдень.';
+    }
+    if (result === 'D') {
+        document.getElementById('name-result').innerText =
+            'Ви - Змішаний тип🔄';
+        document.getElementById('info-result').innerText =
+            'Ви адаптуєтесь під обставини, ваш ритм життя гнучкий, і ви можете ефективно працювати у будь-який час.';
+    }
 }
