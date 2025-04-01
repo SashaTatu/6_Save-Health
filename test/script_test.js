@@ -1,5 +1,7 @@
 console.log('Script connected');
 
+//Масив запитаннь та варіантів відповідей
+
 const Questions = [
     {
         question: '1. Коли вам найкраще працюється або вчиться?',
@@ -48,52 +50,17 @@ const Questions = [
     }
 ];
 
-
+let valuesArray = []
 
 let numberOfQuestion = 0;
 console.log('Question = ' + numberOfQuestion);
 
-let radios = document.querySelectorAll('input[type="radio"]');
-let continueBtn = document.getElementById('continue_btn');
+//Порожній масив для value відповідей
 
 
-function submitTest() {
-    let answers = {}; // Об'єкт для підрахунку виборів
-    let questions = document.querySelectorAll(".answer"); // Отримуємо всі питання
-    let totalQuestions = Questions.length; // Кількість питань
-    let answeredCount = 0; // Лічильник відповідей
 
-    console.log("lf = "+questions)
-    console.log("ls = "+totalQuestions)
 
-    questions.forEach((question, index) => {
-        let selected = document.querySelector(`input[name='answer${index}']:checked`);
-        if (selected) {
-            answeredCount++; // Лічимо, скільки відповідей вибрано
-            let value = selected.value;
-            answers[value] = (answers[value] || 0) + 1;
-        }
-    });
-
-    let maxChoice = Object.keys(answers).reduce((a, b) => (answers[a] > answers[b] ? a : b));
-    
-    if (maxChoice === "A"){
-        document.getElementById('name-result').innerText='Ви - Жайворонок🦜'
-        document.getElementById('info-result').innerText='Ви активні вранці, швидко прокидаєтесь і любите починати справи зранку. Вечірня продуктивність знижується.'
-    }
-    if (maxChoice === "C"){
-        document.getElementById('name-result').innerText='Ви - Сова🦉'
-        document.getElementById('info-result').innerText='Найбільший пік активності – у вечірній та нічний час. Вранці прокидатися важко, а в першій половині дня ви ще сонний/а.'
-    }
-    if (maxChoice === "B"){
-        document.getElementById('name-result').innerText='Ви - Голуб🕊'
-        document.getElementById('info-result').innerText='Ваш хронотип змішаний, ви можете працювати і вранці, і ввечері, але найбільше енергії маєте вдень.'
-    }
-    if (maxChoice === "D"){
-        document.getElementById('name-result').innerText='Ви - Змішаний тип🔄'
-        document.getElementById('info-result').innerText='Ви адаптуєтесь під обставини, ваш ритм життя гнучкий, і ви можете ефективно працювати у будь-який час.'
-    }
-}
+//Функція для блокування кнопки 'Продовжити'
 
 function checkSelection() {
     let radios = document.querySelectorAll("input[name='answer']");
@@ -106,6 +73,8 @@ function checkSelection() {
     continueBtn.style.cursor = isDisabled ? 'not-allowed' : 'pointer';
 }
 
+//При виборі одного з варіантів відповідей кнопка 'Продовжити' розблоковується
+
 document.querySelectorAll("input[name='answer']").forEach(radio => {
     radio.addEventListener("change", checkSelection);
 });
@@ -117,10 +86,16 @@ document.getElementById('continue_btn').addEventListener('click', () => {
     checkSelection();
 
     console.log('Question = ' + numberOfQuestion);
+    
+
+
+    //Заміна назви кнопки 'Продовжити' на 'Завершити тест'
 
     if (numberOfQuestion == 4) {
         document.getElementById('continue_btn').innerText = 'Завершити тест';
     }
+
+    //Виведення результату
 
     if (numberOfQuestion == 5) {
         document.getElementById('question').innerText = "Ваш результат:";
@@ -129,10 +104,10 @@ document.getElementById('continue_btn').addEventListener('click', () => {
         document.getElementById('redo-test_btn').style.display = 'inline';
         document.querySelectorAll('.site-footer').forEach(el => el.style.justifyContent = 'space-around');
         document.querySelectorAll('.result').forEach(el => el.style.display = 'flex');
-        submitTest()
-        return;
     }
 
+
+    //Для правильної заміни варіанті відповідей та питань
     if (numberOfQuestion < Questions.length) {
         document.getElementById('question').innerText = Questions[numberOfQuestion].question;
         let labels = document.querySelectorAll('label.radio_btn');
@@ -143,12 +118,13 @@ document.getElementById('continue_btn').addEventListener('click', () => {
             }
         });
     }
+    
 });
 
 
+//Функція для скидання варіанта відповіді при переході на наступне
 function resetSelection() {
-    let radios = document.querySelectorAll("input[type='radio']");
-    radios.forEach((radio) => {
+    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
         radio.checked = false;
     });
 }
