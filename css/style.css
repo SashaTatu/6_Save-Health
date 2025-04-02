@@ -329,26 +329,56 @@ input{
     margin: 20px;
 }
 
-.vitamin img:first-child{
-    display: block;
+.photo-size {
     width: 128px;
-    height: 128px;
-}
-
-.scheme-size{
-    width: 100%;
+    height: 246px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.scheme{
-    width: 128px;
+
+.photo{
+    display: block;
+    opacity: 1;
+}
+
+.scheme-size{
+    height: 0px;
+}
+
+.scheme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    width: 100%;
+    height: 0%;
+    object-fit: contain;
+}
+
+.vitamin:hover .photo-size {
     display: none;
+}
+
+.vitamin:hover .photo {
+    opacity: 0;
+}
+
+.vitamin:hover .scheme {
+    opacity: 1;
+    height: 100%;
+}
+
+.vitamin:hover .scheme-size {
+    height: 246px;
 }
 
 .vitamin p:last-child{
     text-align: justify;
     font-size: 28px;
 }
+
 
 .vitamin div{
     margin-top: auto;

@@ -249,34 +249,34 @@ function MyFunction_left() {
 
 const arrayOfVitaminObjects = [
     {
-        "id":1,
+        "id":"001",
         "title":"Вітамин А",
         "photo":"vitamin-a.png",
-        "description":"Відіграє важливу роль у підтримці нормального зору, імунної системи, репродуктивної функції, росту та розвитку, а також сприяє нормальній роботі серця, легень та інших органів",
+        "description":"Відіграє важливу роль у підтримці нормального зору, імунної системи, репродуктивної функції, росту та розвитку",
         "scheme":"vitamin-a-sheme.png",
         "rating":"4",
         "type":"Жиророзчинні вітаміни",
     },
     {
-        "id":2,
-        "title":"Вітамін Б12",
-        "photo":"vitamin-b12.png",
+        "id":"002",
+        "title":"Вітамін Б2",
+        "photo":"vitamin-b2.png",
         "description":"бере участь у кровотворенні, регулює вуглеводний і жировий обмін в організмі",
-        "scheme":"vitamin-b12-sheme.png",
+        "scheme":"vitamin-b2-sheme.png",
         "rating":"5",
         "type":"Водорозчинні вітаміни",
     },
     {
-        "id":3,
-        "title":"Омега",
-        "photo":"vitamin-omega.png",
+        "id":"003",
+        "title":"Омега6",
+        "photo":"vitamin-omega6.png",
         "description":"Необхіден для нормального розвитку мозку та очей, а також для підтримання здоров'я серцево-судинної системи",
-        "scheme":"vitamin-omega-sheme.png",
+        "scheme":"vitamin-omega6-sheme.png",
         "rating":"2",
         "type":"Жирні кислоти",
     },
     {
-        "id":4,
+        "id":"004",
         "title":"Вітамін Д",
         "photo":"vitamin-d.png",
         "description":"Сприяє всмоктуванню кальцію та фосфору з їжі, що необхідно для нормальної роботи кісток, зубів та м'язів",
@@ -297,11 +297,15 @@ arrayOfVitaminObjects.forEach((item) => {
                 <p>${item.id}</p>
                 <h3>${item.title}</h3>
                 <hr>
-                <img class='photo' src ="img/vitamins/${item.photo}" alt="Зображення ${item.title}">
-                <div class="scheme-size">
-                    <img class='scheme' src = "img/vitamins/${item.scheme}" alt="Схема ${item.title}">
-                </div> 
-                <p>${item.description}</p>
+                <div class="img-size">
+                    <div class="photo-size">
+                        <img class='photo' src ="img/vitamins/${item.photo}" alt="Зображення ${item.title}">
+                    </div>   
+                    <div class="scheme-size">
+                        <img class='scheme' src = "img/vitamins/${item.scheme}" alt="Схема ${item.title}"
+                    </div>
+                </div>
+                <p class='description'>${item.description}</p>
                 <div>
                     <span>${'🌟'.repeat(item.rating) + '❌'.repeat(5-item.rating)}</span>
                     <p>${item.type}</p>
@@ -311,19 +315,3 @@ arrayOfVitaminObjects.forEach((item) => {
     document.getElementById('p-vitamis').appendChild(divVitamin)
 })
 
-let photos = document.querySelectorAll('.photo');
-let schemes = document.querySelectorAll('.scheme');
-
-photos.forEach((photo, i) => {
-    let scheme = schemes[i];
-
-    photo.addEventListener('mouseenter', () => {
-        scheme.style.display = 'block';
-        photo.style.display = 'none';
-    });
-
-    photo.addEventListener('mouseleave', () => {
-        photo.style.display = 'block';
-        scheme.style.display = 'none';
-    });
-});
