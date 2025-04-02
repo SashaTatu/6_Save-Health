@@ -329,15 +329,27 @@ input{
     margin: 20px;
 }
 
-.vitamin img{
+.vitamin img:first-child{
+    display: block;
     width: 128px;
     height: 128px;
+}
+
+.scheme-size{
+    width: 100%;
+    align-items: center;
+}
+
+.scheme{
+    width: 128px;
+    display: none;
 }
 
 .vitamin p:last-child{
     text-align: justify;
     font-size: 28px;
 }
+
 .vitamin div{
     margin-top: auto;
     width: 100%;
