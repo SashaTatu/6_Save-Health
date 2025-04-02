@@ -343,6 +343,22 @@ input{
     width: 100%;
 }
 
+.vitamin div>p:first-child{
+    text-align: center;
+}
+
+.vitamin p:last-child{
+    width: 100%;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    border-radius: 5px;
+    background-color: #cccccc;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
 
 
 .gallery {
