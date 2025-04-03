@@ -28,6 +28,56 @@ h1 {
     line-height: 40px;
 }
 
+#fixed-response-container{
+    position: fixed;
+    bottom: 60%;
+    max-width: 260px;
+    right: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+    visibility: visible;
+    transform: translateX(320px);
+    transition: transform 0.7s ease-in-out;
+}
+
+#fixed-response-h3{
+    text-align: center;
+    margin-top: 0;
+}
+
+#fixed-response{
+    text-align: center;
+    margin-top: 0;
+}
+
+#fixed-response-input{
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#btn-response {
+    width: 100%;
+    background: linear-gradient(90deg, #35b0d2, #4dc3e4);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#btn-response:hover {
+    background: linear-gradient(90deg, #2a8da7, #3aa8c5);
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
 #start_btn{
     background: linear-gradient(90deg, #2fbd1c, #19b604);
     padding: 10px 20px;

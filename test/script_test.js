@@ -57,6 +57,10 @@ const valuesArray = [];
 let numberOfQuestion = 0;
 console.log('Question = ' + numberOfQuestion);
 
+function showResponse(){
+    document.getElementById('fixed-response-container').style.transform = 'translateX(0px)'
+}
+
 //Функція для блокування кнопки 'Продовжити' та зміна його стилів
 
 function checkSelection() {
@@ -137,6 +141,7 @@ document.getElementById('continue_btn').addEventListener('click', () => {
         document
             .querySelectorAll('.result')
             .forEach((el) => (el.style.display = 'flex'));
+        showResponse()
     }
 
     //Для правильної заміни варіанті відповідей та питань
