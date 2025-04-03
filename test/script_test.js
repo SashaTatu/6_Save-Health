@@ -57,8 +57,11 @@ const valuesArray = [];
 let numberOfQuestion = 0;
 console.log('Question = ' + numberOfQuestion);
 
+//Функція для показування блоку з відгуками
+
 function showResponse(){
     document.getElementById('fixed-response-container').style.transform = 'translateX(0px)'
+    console.log('Блок з відгуками показан')
 }
 
 //Функція для блокування кнопки 'Продовжити' та зміна його стилів
@@ -208,3 +211,17 @@ function submitTest() {
             'Ви адаптуєтесь під обставини, ваш ритм життя гнучкий, і ви можете ефективно працювати у будь-який час.';
     }
 }
+
+
+document.getElementById('btn-response').addEventListener('click', () => {
+    setTimeout(() => {
+        document.getElementById('fixed-response-container').style.transform = 'translateY(-150px)'
+        document.getElementById('fixed-response-h3').innerText = 'Дякуємо за ваш відгук!';
+        document.getElementById('fixed-response').style.display = 'none';
+        document.getElementById('fixed-response-input').style.display = 'none';
+        document.getElementById('btn-response').style.display = 'none';
+    },100)
+    setTimeout(() => {
+        document.getElementById('fixed-response-container').style.opacity = '0';
+    },2000)
+})
