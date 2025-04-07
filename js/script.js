@@ -1,27 +1,22 @@
 console.log('Script connected');
 
-const arrayOfAdvice = [
-    'Дотримуйтесь режиму дня',
-    'Пийте достатньо води',
-    'Здійснюйте регулярні прогулянки',
-    'Зберігайте збалансоване харчування',
-    'Захистіться від стресу',
-    'Не нехтуйте фізичною активністю',
-    'Контролюйте вагу',
-    'Обмежте цукор',
-    'Виконуйте розтяжку вранці',
-    'Слідкуйте за поставою',
-    'Періодично відпочивайте',
-    'Приймайте вітаміни та мікроелементи',
-    'Зменшіть споживання солі',
-    'Детоксикація',
-    'Спіть не менше 7 годин',
-    'Відмовтесь від куріння',
-    'Мисліть позитивно',
-    'Слідкуйте за гігієною',
-    'Відвідуйте планові обстеження',
-    'Виключіть алкоголь',
-];
+const arrayOfAdvice = []
+
+fetch('js/advice.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach((item) => {
+            arrayOfAdvice.push(item)
+        })
+        console.log(arrayOfAdvice)
+    })
+    .catch(error => console.error('Помилка при зчитування advice:', error))
+
+document.getElementById('btn_advice').addEventListener('click', () => {
+    console.log('Button clicked');
+    let index = Math.floor(Math.random() * arrayOfAdvice.length);
+    document.getElementById('p-advice').innerText = arrayOfAdvice[index];
+})
 
 const arrayOfGalleryImeges = [
     '1.jpg',
@@ -79,14 +74,9 @@ let showAlert = 1;
 
 document.getElementById('count-of-pills').innerText = '💊'.repeat(countOfPills);
 
+
 document.getElementById('btn_advice').addEventListener('click', () => {
     console.log('Button clicked');
-
-    let index = Math.floor(Math.random() * arrayOfAdvice.length);
-
-    //console.log('Номер елементу масиву - ', index);
-    document.getElementById('p-advice').innerText = arrayOfAdvice[index];
-
     countOfPills--;
     console.log('countOfPills ' + countOfPills);
     document.getElementById('count-of-pills').innerText =
