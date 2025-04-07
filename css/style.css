@@ -329,11 +329,10 @@ input{
 
 .vitamin h3{
     font-size: 24px;
+    transition: all 1s ease-in-out;
 }
 
-.vitamin:hover h3{
-    color: red;
-}
+
 
 .vitamin hr {
     border: 1px solid #b1b1b1;
