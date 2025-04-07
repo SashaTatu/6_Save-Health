@@ -252,19 +252,18 @@ fetch('js/vitamins.json')
 .then(data =>{
     data.forEach((item) => {
         console.log(item)
-
-    let divVitamin = document.createElement('div')
-    divVitamin.classList.add('vitamin')
-    divVitamin.innerHTML = `
+        let divVitamin = document.createElement('div')
+        divVitamin.classList.add('vitamin')
+        divVitamin.innerHTML = `
                 <p>${item.id}</p>
                 <h3>${item.title}</h3>
                 <hr>
                 <div class="img-size">
                     <div class="photo-size">
-                        <img class='photo' src ="img/vitamins/${item.photo}" alt="Зображення ${item.title}">
+                        <img class='photo' src ="img/vitamins/${item.photo}" onerror="this.onerror=null; this.src='img/vitamins/supplement.png';">
                     </div>   
                     <div class="scheme-size">
-                        <img class='scheme' src = "img/vitamins/${item.scheme}" alt="Схема ${item.title}"
+                        <img class='scheme' src = "img/vitamins/${item.scheme}" onerror="this.onerror=null; this.src='img/vitamins/scheme.png';">
                     </div>
                 </div>
                 <p class='description'>${item.description}</p>
@@ -273,10 +272,13 @@ fetch('js/vitamins.json')
                     <p>${item.type}</p>
                 </div>
     `
-
+    
     document.getElementById('p-vitamis').appendChild(divVitamin)
+    
     })
 })
 .catch(error => console.error('Помилка отриманя вітамінів:', error));
+
+
 
 
