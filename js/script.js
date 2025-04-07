@@ -278,5 +278,5 @@ fetch('js/vitamins.json')
     })
 })
 .catch(error => console.error('Помилка отриманя вітамінів:', error));
-)
+
 
