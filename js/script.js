@@ -247,49 +247,11 @@ function MyFunction_left() {
 
 
 
-const arrayOfVitaminObjects = [
-    {
-        "id":"001",
-        "title":"Вітамин А",
-        "photo":"vitamin-a.png",
-        "scheme":"vitamin-a-sheme.png",
-        "description":"Відіграє важливу роль у підтримці нормального зору, імунної системи, репродуктивної функції, росту та розвитку",
-        "rating":"4",
-        "type":"Жиророзчинні вітаміни",
-    },
-    {
-        "id":"002",
-        "title":"Вітамін Б2",
-        "photo":"vitamin-b2.png",
-        "scheme":"vitamin-b2-sheme.png",
-        "description":"бере участь у кровотворенні, регулює вуглеводний і жировий обмін в організмі",
-        "rating":"5",
-        "type":"Водорозчинні вітаміни",
-    },
-    {
-        "id":"003",
-        "title":"Омега6",
-        "photo":"vitamin-omega6.png",
-        "scheme":"vitamin-omega6-sheme.png",
-        "description":"Необхіден для нормального розвитку мозку та очей, а також для підтримання здоров'я серцево-судинної системи",
-        "rating":"2",
-        "type":"Жирні кислоти",
-    },
-    {
-        "id":"004",
-        "title":"Вітамін Д",
-        "photo":"vitamin-d.png",
-        "scheme":"vitamin-d-sheme.png",
-        "description":"Сприяє всмоктуванню кальцію та фосфору з їжі, що необхідно для нормальної роботи кісток, зубів та м'язів",
-        "rating":"3",
-        "type":"Жиророзчинні вітаміни",
-    },
-]
-
-
-
-arrayOfVitaminObjects.forEach((item) => {
-    console.log(item)
+fetch('js/vitamins.json')
+.then(response => response.json())
+.then(data =>{
+    data.forEach((item) => {
+        console.log(item)
 
     let divVitamin = document.createElement('div')
     divVitamin.classList.add('vitamin')
@@ -313,5 +275,8 @@ arrayOfVitaminObjects.forEach((item) => {
     `
 
     document.getElementById('p-vitamis').appendChild(divVitamin)
+    })
 })
+.catch(error => console.error('Помилка отриманя вітамінів:', error));
+)
 

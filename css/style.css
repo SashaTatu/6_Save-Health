@@ -317,12 +317,22 @@ input{
     align-self: flex-end;
     text-align: right;
     font-size: 10px;
-    color: #b1b1b1;
-
+    color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
+
+.vitamin:hover p:first-child{
+    color: #999999;
+    font-size: medium;
+}
+
 
 .vitamin h3{
     font-size: 24px;
+}
+
+.vitamin:hover h3{
+    color: red;
 }
 
 .vitamin hr {
