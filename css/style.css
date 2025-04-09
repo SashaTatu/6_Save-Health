@@ -415,6 +415,13 @@ input{
     font-size: 14px;
     font-weight: bold;
     padding: 5px 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+.vitamin:hover p:last-child {
+    box-shadow: 10px 15px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+
 }
 
 
